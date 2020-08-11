@@ -7,7 +7,7 @@ const form = document.querySelector("form").addEventListener("submit", (e) => {
     const input = document.querySelector("#search").value;
     h1.textContent = `Loading...`;
     p.textContent = "";
-    fetch(`/current?access_key=5d65501d5a614d46a203bdeded323cde&query=${input}`).then(response => {
+    fetch(`http://api.weatherstack.com/current?access_key=5d65501d5a614d46a203bdeded323cde&query=${input}`).then(response => {
         response.json().then(data => {
             if (data.error) {
                 h1.textContent = "Enter Correct Location";
